@@ -135,3 +135,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Reference
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactFlow](https://reactflow.dev/)
+- [Styled Components](https://styled-components.com/)
+- [UUID](https://github.com/uuidjs/uuid)
+- [Rete](https://rete.js.org/#/)
+- [LangFlow](https://github.com/langflow/langflow)
+- [LangGraph](https://github.com/langflow/langgraph)
+- [crewAI](https://github.com/crew-ai/crewai)
+- [n8n](https://github.com/n8n-io/n8n)
+- [AgenticFlow](https://github.com/locchh/agenticflow)
