@@ -1,29 +1,136 @@
-# BlockApp
+# BlockApp - Workflow Builder
+
+A visual workflow builder that allows you to create, edit, and manage workflows using a node-based interface. Build complex workflows by connecting different types of nodes together.
 
 ## Description
 
-Workflow is can be chain of nodes, or tree of nodes or graph of nodes.
+A workflow can be a chain of nodes, a tree of nodes, or a graph of nodes. Each node represents a step in the workflow, and they can be connected to create complex processing pipelines.
 
-node is step of workflow, There are 3 type of node:
-- Start node
-- Process node
-- Stop node
+## Node Types
+
+- **Start Node**: The entry point of your workflow
+- **Process Node**: Performs operations or transformations
+- **Stop Node**: The end point of your workflow
+
+## Node Properties
 
 Each node can have these properties:
-- ID: UUID
-- Name: String
-- Description: String
-- Prompt: String
-- Tools: Object
-- AI Model: String
-- Input Nodes: Array of Node ID
-- Output Nodes: Array of Node ID
+- **ID**: Auto-generated UUID
+- **Name**: Display name for the node
+- **Description**: Optional description of the node's purpose
+- **Prompt**: Text prompt for AI processing (for AI-powered nodes)
+- **Tools**: Object containing available tools for the node
+- **AI Model**: Selected AI model (e.g., gpt-4)
+- **Input Nodes**: Array of connected input node IDs
+- **Output Nodes**: Array of connected output node IDs
+
+## Technology Stack
+
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
+- [ReactFlow](https://reactflow.dev/) - Library for building node-based editors and interactive diagrams
+- [Styled Components](https://styled-components.com/) - CSS-in-JS styling solution
 
 ## Features
 
-- Create, edit, and Export workflow to JSON 
-- Import workflow from JSON
+- **Workflow Management**
+  - Drag and drop nodes onto the canvas
+  - Connect nodes by dragging from one node's output to another's input
+  - Export your workflow to a JSON file
+  - Import existing workflows from JSON
+  - Responsive design that works on different screen sizes
 
+## Getting Started
 
-# Reference
-https://reactflow.dev/
+### Prerequisites
+- Node.js (v14 or later)
+- npm (v6 or later)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/blockapp.git
+   cd blockapp
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+## How to Use
+
+1. **Adding Nodes**
+   - Click on any node type in the toolbar to start dragging it onto the canvas
+   - Release the mouse button to place the node
+
+2. **Connecting Nodes**
+   - Hover over a node to see its connection points (handles)
+   - Click and drag from an output handle to another node's input handle
+   - Release to create a connection
+
+3. **Editing Node Properties**
+   - Click on a node to select it
+   - Edit its properties in the sidebar (if implemented)
+
+4. **Saving and Loading Workflows**
+   - Click "Export Workflow" to download your workflow as a JSON file
+   - Click "Import Workflow" to load a previously saved workflow
+
+## Technology Stack
+
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
+- [ReactFlow](https://reactflow.dev/) - Library for building node-based editors and interactive diagrams
+- [Styled Components](https://styled-components.com/) - CSS-in-JS styling solution
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Flow/
+│   │   └── FlowBuilder.tsx    # Main flow builder component
+│   └── Nodes/
+│       ├── BaseNode.tsx      # Base node component with common styling
+│       ├── ProcessNode.tsx   # Process node implementation
+│       ├── StartNode.tsx     # Start node implementation
+│       └── StopNode.tsx      # Stop node implementation
+├── types/
+│   └── index.ts            # TypeScript type definitions
+├── App.tsx                   # Main application component
+└── index.tsx                 # Application entry point
+```
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
