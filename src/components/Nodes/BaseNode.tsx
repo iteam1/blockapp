@@ -4,45 +4,33 @@ import { NodeType } from '../../types';
 import styled from 'styled-components';
 
 const NodeContainer = styled.div<{ type: NodeType; selected?: boolean }>`
-  padding: 12px;
+  padding: 12px 16px 12px 14px;
   border-radius: 8px;
   min-width: 200px;
   background: white;
-  border: 2px solid ${({ type }) => {
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid ${({ type }) => {
     switch (type) {
       case 'start':
-        return '#10B981';
+        return '#10B981'; // Green for start
       case 'process':
-        return '#3B82F6';
+        return '#3B82F6'; // Blue for process
       case 'stop':
-        return '#EF4444';
+        return '#EF4444'; // Red for stop
       default:
-        return '#9CA3AF';
+        return '#9CA3AF'; // Gray for unknown
     }
   }};
   box-shadow: ${({ selected }) => (selected ? '0 0 0 2px #60A5FA' : '0 1px 3px rgba(0, 0, 0, 0.1)')};
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 `;
 
-const NodeHeader = styled.div<{ type: NodeType }>`
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  font-size: 12px;
-  background: ${({ type }) => {
-    switch (type) {
-      case 'start':
-        return '#10B981';
-      case 'process':
-        return '#3B82F6';
-      case 'stop':
-        return '#EF4444';
-      default:
-        return '#9CA3AF';
-    }
-  }};
-`;
+// Node header has been removed as per request
 
 const NodeContent = styled.div`
   font-size: 12px;
@@ -69,9 +57,6 @@ interface BaseNodeProps {
 const BaseNode: React.FC<BaseNodeProps> = ({ id, data, selected, children }) => {
   return (
     <NodeContainer type={data.type} selected={selected}>
-      <NodeHeader type={data.type}>
-        {data.type.toUpperCase()} NODE
-      </NodeHeader>
       <NodeContent>
         <div><strong>Name:</strong> {data.name}</div>
         <div><strong>Model:</strong> {data.aiModel || 'N/A'}</div>

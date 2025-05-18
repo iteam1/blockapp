@@ -14,15 +14,16 @@ A workflow can be a chain of nodes, a tree of nodes, or a graph of nodes. Each n
 
 ## Node Properties
 
-Each node can have these properties:
-- **ID**: Auto-generated UUID
-- **Name**: Display name for the node
-- **Description**: Optional description of the node's purpose
-- **Prompt**: Text prompt for AI processing (for AI-powered nodes)
-- **Tools**: Object containing available tools for the node
-- **AI Model**: Selected AI model (e.g., gpt-4)
-- **Input Nodes**: Array of connected input node IDs
-- **Output Nodes**: Array of connected output node IDs
+Each node supports the following configurable properties:
+
+* **ID**: A unique, auto-generated UUID (not editable).
+* **Name**: The node’s display name (always visible, editable).
+* **Description**: An optional explanation of the node’s purpose (shown on hover, editable).
+* **Prompt**: The AI input prompt (shown on hover; editable, applicable to AI-powered nodes only).
+* **Tools**: A list of tools associated with the node (displayed in a dropdown; tools can be added or removed).
+* **AI Model**: The name of the AI model used (e.g., `gpt-4`; editable).
+* **Input Nodes**: An array of connected input node IDs (visualized as connecting lines).
+* **Output Nodes**: An array of connected output node IDs (also visualized as connecting lines).
 
 ## Technology Stack
 
